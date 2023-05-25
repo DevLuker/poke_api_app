@@ -19,7 +19,9 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => PokemonBloc(context.read<PokemonRepository>()),
+      create: (context) => PokemonBloc(
+        context.read<PokemonRepository>(),
+      )..add(const LoadAllPokemons()), // Cargar los pokemones una vez
       child: const HomeBodyView(),
     );
   }

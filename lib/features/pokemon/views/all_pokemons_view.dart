@@ -17,7 +17,8 @@ class _AllPokemonsViewState extends State<AllPokemonsView> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<PokemonBloc>().add(const LoadAllPokemons());
+      // Evitar la carga de nuevo del pokemon
+      //context.read<PokemonBloc>().add(const LoadAllPokemons());
     });
   }
 

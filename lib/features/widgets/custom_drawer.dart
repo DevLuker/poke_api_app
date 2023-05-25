@@ -73,7 +73,8 @@ final List<DrawerItem> drawerItems = [
     icon: Icons.home,
     title: 'Lista de Pokemones',
     onTap: (context, homeBloc) {
-      context.read<PokemonBloc>().add(const LoadAllPokemons());
+      // Evitar la carga de nuevo del pokemon
+      //context.read<PokemonBloc>().add(const LoadAllPokemons());
       homeBloc.add(const GoToAllPokemons());
     },
   ),
